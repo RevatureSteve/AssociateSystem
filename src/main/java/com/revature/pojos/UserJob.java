@@ -15,8 +15,9 @@ import javax.persistence.Table;
 public class UserJob {
 
 	
-	@Id @SequenceGenerator(name="userjob_id_seq", sequenceName="userjob_id_seq") @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userjob_id_seq")
-
+	@Id 
+	@SequenceGenerator(name="userjob_id_seq", sequenceName="userjob_id_seq") 
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userjob_id_seq")
 	@Column(name="userjob_id")
 	private int userjob_id;
 	

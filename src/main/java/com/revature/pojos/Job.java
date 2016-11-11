@@ -12,9 +12,9 @@ import javax.persistence.Table;
 @Table(name="Job")
 public class Job {
 
-	@Id @SequenceGenerator(name = "job_id_seq", sequenceName="job_id_seq")
+	@Id 
+	@SequenceGenerator(name = "job_id_seq", sequenceName="job_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="job_id_seq")
-
 	@Column(name="job_id")
 	private int job_id;
 	

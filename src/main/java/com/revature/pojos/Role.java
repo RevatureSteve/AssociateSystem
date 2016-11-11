@@ -12,7 +12,9 @@ import javax.persistence.Table;
 @Table(name="Role")
 public class Role {
 
-	@Id @SequenceGenerator(name="role_id_seq", sequenceName="role_id_seq") @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="role_id_seq")
+	@Id 
+	@SequenceGenerator(name="role_id_seq", sequenceName="role_id_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="role_id_seq")
 	@Column(name = "role_ID")
 	private int role_id;
 
@@ -32,5 +34,6 @@ public class Role {
 		this.role_name = role_name;
 	}
 
+	
 
 }

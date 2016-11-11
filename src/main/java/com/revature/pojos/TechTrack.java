@@ -12,7 +12,9 @@ import javax.persistence.Table;
 @Table(name="TechTrack")
 public class TechTrack {
 
-	@Id @SequenceGenerator(name="track_id_seq", sequenceName="track_id_seq") @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="track_id_seq")
+	@Id 
+	@SequenceGenerator(name="track_id_seq", sequenceName="track_id_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="track_id_seq")
 	@Column(name = "track_ID")
 	private int track_id;
 
