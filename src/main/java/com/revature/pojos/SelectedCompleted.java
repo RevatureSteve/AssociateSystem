@@ -30,8 +30,7 @@ public class SelectedCompleted {
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
-	@OneToOne
-	@JoinColumn(name = "selected_completed_timestamp")
+	@Column(name = "selected_completed_timestamp")
 	private Timestamp selectedCompletedTimestamp;
 	
 	public SelectedCompleted(){}

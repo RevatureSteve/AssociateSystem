@@ -13,7 +13,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="status")
+@Table (name="legal_doc")
 public class LegalDoc {
 
 	@Id 
