@@ -24,14 +24,18 @@ public class Client {
 	private String clientName;
 	
 	@Column(name = "client_avg_start_date")
-	private Timestamp clientAvgStartDate;
+	private double clientAvgStartDate;
+	
+	@Column(name = "client_avg_interview_length")
+	private double clientAvgInterviewLength;
 
 	public Client() {}
 
-	public Client(String clientName, Timestamp clientAvgStartDate) {
+	public Client(String clientName, double clientAvgStartDate, double clientAvgInterviewLength) {
 		super();
 		this.clientName = clientName;
 		this.clientAvgStartDate = clientAvgStartDate;
+		this.clientAvgInterviewLength = clientAvgInterviewLength;
 	}
 
 	public int getClientId() {
@@ -50,19 +54,28 @@ public class Client {
 		this.clientName = clientName;
 	}
 
-	public Timestamp getClientAvgStartDate() {
+	public double getClientAvgStartDate() {
 		return clientAvgStartDate;
 	}
 
-	public void setClientAvgStartDate(Timestamp clientAvgStartDate) {
+	public void setClientAvgStartDate(double clientAvgStartDate) {
 		this.clientAvgStartDate = clientAvgStartDate;
+	}
+
+	public double getClientAvgInterviewLength() {
+		return clientAvgInterviewLength;
+	}
+
+	public void setClientAvgInterviewLength(double clientAvgInterviewLength) {
+		this.clientAvgInterviewLength = clientAvgInterviewLength;
 	}
 
 	@Override
 	public String toString() {
 		return "Client [clientId=" + clientId + ", clientName=" + clientName + ", clientAvgStartDate="
-				+ clientAvgStartDate + "]";
+				+ clientAvgStartDate + ", clientAvgInterviewLength=" + clientAvgInterviewLength + "]";
 	}
+
 	
 
 }
