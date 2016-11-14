@@ -9,29 +9,43 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Role")
+@Table(name="role")
 public class Role {
 
 	@Id 
 	@SequenceGenerator(name="role_id_seq", sequenceName="role_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="role_id_seq")
-	@Column(name = "role_ID")
-	private int role_id;
+	@Column(name = "role_id")
+	private int roleId;
 
 	@Column(name = "role_name")
-	private String role_name;
+	private String roleName;
 
-	public Role(int role, String role_name) {
-		super();
-		this.role_name = role_name;
+	public Role() {}
+	
+	public Role(String role_name) {
+		this.roleName = role_name;
 	}
 
-	public String getRole_name() {
-		return role_name;
+	public int getRoleId() {
+		return roleId;
 	}
 
-	public void setRole_name(String role_name) {
-		this.role_name = role_name;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	@Override
+	public String toString() {
+		return "Role [roleId=" + roleId + ", roleName=" + roleName + "]";
 	}
 
 	

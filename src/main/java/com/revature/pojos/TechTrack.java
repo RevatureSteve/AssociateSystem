@@ -9,41 +9,43 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TechTrack")
+@Table(name="tech_track")
 public class TechTrack {
 
 	@Id 
 	@SequenceGenerator(name="track_id_seq", sequenceName="track_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="track_id_seq")
-	@Column(name = "track_ID")
-	private int track_id;
+	@Column(name = "track_id")
+	private int trackId;
 
 	@Column(name = "track_name")
-	private String track_name;
+	private String trackName;
 
-	public TechTrack(String track_name) {
-		super();
-		this.track_name = track_name;
-	}
-
-	public int getTrack_id() {
-		return track_id;
-	}
-
-	public void setTrack_id(int track_id) {
-		this.track_id = track_id;
-	}
-
-	public String getTrack_name() {
-		return track_name;
-	}
-
-	public void setTrack_name(String track_name) {
-		this.track_name = track_name;
-	}
+	public TechTrack() {}
 	
-	
-	
+	public TechTrack(String trackName) {
+		this.trackName = trackName;
+	}
 
+	public int getTrackId() {
+		return trackId;
+	}
+
+	public void setTrackId(int trackId) {
+		this.trackId = trackId;
+	}
+
+	public String getTrackName() {
+		return trackName;
+	}
+
+	public void setTrackName(String trackName) {
+		this.trackName = trackName;
+	}
+
+	@Override
+	public String toString() {
+		return "TechTrack [trackId=" + trackId + ", trackName=" + trackName + "]";
+	}
 
 }
