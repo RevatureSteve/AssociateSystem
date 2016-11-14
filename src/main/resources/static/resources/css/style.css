@@ -1,1 +1,38 @@
 /* Rev Associate CSS */
+
+body
+{
+	background-color:#F8F8F8;
+	height:100%;
+	width:100%;
+}
+
+.Inline
+{
+	display:inline-block;
+}
+
+#RevatureLogo
+{
+	padding:0;
+	margin:0;
+	vertical-align:top;
+}
+
+#AlertBar
+{
+	margin-left:2em;
+}
+
+#AlertBar > h1
+{
+	margin:0.1em;
+	padding:0.1em;
+}
+
+#UserInfo
+{
+	position:absolute;
+	right:1px;
+	width:10%;
+}
