@@ -32,10 +32,10 @@ public class ClientController {
 	
 	@RequestMapping(value = "/home")
 	public ResponseEntity<List<Interview>> home(Integer userId) {
-//		//------------------------------
-//		// Dummy Data
-//		
-//		// User bob
+		//------------------------------
+		// Dummy Data
+		
+		// User bob
 //		User bob = new User();
 //		bob.setUserUsername("bob");
 //		bob.setUserPassword("123");
@@ -57,8 +57,8 @@ public class ClientController {
 //		Interview i3 = new Interview();
 //		i3.setInterviewMarketer("rainer");
 //		interviewRepo.save(i3);
-//		
-//		//------------------------------
+		
+		//------------------------------
 		
 		// Actual code
 		
@@ -66,7 +66,7 @@ public class ClientController {
 		// FOR TESTING PURPOSES
 		// YOU NEED TO CHECK OUT WHAT ID HIBERNATE GAVE TO BOB
 		// SO LIKE, IT MIGHT BE 50, OR 100.  CHECK YOUR SQL DEVELOPER.
-		List<Interview> list = interviewRepo.findByUser(userRepo.findOneByUserId(100));
+		List<Interview> list = interviewRepo.findByUser(userRepo.findOneByUserId(50));
 		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
 	}
 }
