@@ -1,11 +1,20 @@
+<link rel="stylesheet" href="resources/css/main.css">
 <!-- Placement; Only display if placement is available. -->
 <hr/>
-<!-- Interviews; Only display if an interview is available. -->
+<div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
+	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
+	<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
+		<h3 class="ClientName">{{interview.client}}</h3>
+		<label class="InterviewInfo">{{interview.info}}</label>
+		<span class="InterviewInfoSpacer"><label>...</label></span>
+		<label class="InterviewLateInfo">{{interview.info}}</label>
+	</div>
+</div>
 <hr/>
-<div data-ng-controller="SubmissionPanel" class="Container col-sm-offset-2" align="left">
-	<h2>Submissions:</h2>
-	<span id="TestClient">
-		<h3>Client Name</h3>
-		<p>Good to Go!</p>
-	</span>
+<div data-ng-controller="SubmissionPanel" class="Container"
+	id="SubmissionPanel">
+
+	First Name: <input type="text" ng-model="firstName"><br>
+	Last Name: <input type="text" ng-model="lastName"><br> <br>
+	Full Name: {{firstName + " " + lastName}}
 </div>

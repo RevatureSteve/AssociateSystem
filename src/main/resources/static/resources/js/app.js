@@ -1,4 +1,4 @@
-var app=angular.module("RAS",["ngRoute"]);
+var app=angular.module("RAS",["ngRoute", "ui.bootstrap"]);
 
 app.controller("MainController", function($scope, $rootScope, dataService){
 	$scope.bob = null;
@@ -12,7 +12,7 @@ app.controller("MainController", function($scope, $rootScope, dataService){
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "login.html"
+        templateUrl : "main.html"
     })
     .when("/main", {
         templateUrl : "main.html"

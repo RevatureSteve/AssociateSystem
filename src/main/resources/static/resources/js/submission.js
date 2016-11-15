@@ -1,5 +1,8 @@
-var appSubmission=angular.module("RAS");
+var app=angular.module("RAS");
 
-appSubmission.controller("SubmissionPanel",function($scope,$rootScope){
-	
+app.controller("SubmissionPanel",function($scope,$rootScope){
+
+	$scope.firstName="Kitten";
+	$scope.lastName="Banana";
 });
+

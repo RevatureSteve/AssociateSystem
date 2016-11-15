@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+#LoginFieldset
+{
+	width:80%;
+	height:80%;
+	border-top-width:10px!important;
+	border-top-style:solid!important;
+	border-style:solid!important;
+	border-width:10px!important;
+}
+
+#LoginFieldset > legend
+{
+	background-color:transparent;
+	border-style:none;
+}
