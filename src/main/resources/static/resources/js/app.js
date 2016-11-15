@@ -6,7 +6,7 @@ app.controller("MainController",function($scope,$rootScope){
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "login.html"
+        templateUrl : "main.html"
     })
     .when("/main", {
         templateUrl : "main.html"
