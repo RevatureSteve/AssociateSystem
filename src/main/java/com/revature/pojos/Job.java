@@ -38,9 +38,9 @@ public class Job {
 	@Column(name="job_contract_length")
 	private double jobContractLength;
 	
-	@ManyToMany(mappedBy="jobs", cascade=CascadeType.ALL)
-	@Fetch(FetchMode.JOIN)
-	private List<User> users;
+//	@ManyToMany(mappedBy="jobs", cascade=CascadeType.ALL)
+//	@Fetch(FetchMode.JOIN)
+//	private List<User> users;
 	
 	public Job() {}
 
@@ -49,7 +49,6 @@ public class Job {
 		this.client = client;
 		this.account = account;
 		this.jobContractLength = job_contract_length;
-		this.users = users;
 	}
 
 	public int getJobId() {
@@ -84,17 +83,9 @@ public class Job {
 		this.jobContractLength = jobContractLength;
 	}
 
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
 	@Override
 	public String toString() {
-		return "Job [jobId=" + jobId + ", jobContractLength=" + jobContractLength + ", users=" + users + "]";
+		return "Job [jobId=" + jobId + ", jobContractLength=" + jobContractLength + "]";
 	}
 
 	

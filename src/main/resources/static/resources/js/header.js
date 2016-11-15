@@ -1,5 +1,5 @@
-var app=angular.module("RAS", ['ui.bootstrap']);
+var appHeader=angular.module("RAS", ['ui.bootstrap']);
 
-app.controller("HeaderPanel",function($scope,$rootScope){
+appHeader.controller("HeaderPanel",function($scope,$rootScope){
 	
 });

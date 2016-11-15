@@ -14,23 +14,23 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="selected_completed")
+@Table(name="selected_completed")
 public class SelectedCompleted {
 
 	@Id 
-	@SequenceGenerator(name="selected_completed_id_seq", sequenceName="selected_completed_id_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="selected_completed_id_seq")
-	@Column(name="selected_completed_id")
+	@SequenceGenerator(name="sc_id_seq", sequenceName="sc_id_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sc_id_seq")
+	@Column(name="sc_id")
 	private int selectedCompletedId;
 
-	@Column(name = "selected_completed_time_to_start_date")
-	private double selectedCompletedTimeToStartDate;
+	@Column(name = "sc_time")
+	private double selectedCompletedTime;
 
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
-	@Column(name = "selected_completed_timestamp")
+	@Column(name = "sc_timestamp")
 	private Timestamp selectedCompletedTimestamp;
 	
 	public SelectedCompleted(){}
@@ -38,7 +38,7 @@ public class SelectedCompleted {
 	public SelectedCompleted(double selectedCompletedTimeToStartDate, Client client,
 			Timestamp selectedCompletedTimestamp) {
 		super();
-		this.selectedCompletedTimeToStartDate = selectedCompletedTimeToStartDate;
+		this.selectedCompletedTime = selectedCompletedTimeToStartDate;
 		this.client = client;
 		this.selectedCompletedTimestamp = selectedCompletedTimestamp;
 	}
@@ -52,11 +52,11 @@ public class SelectedCompleted {
 	}
 
 	public double getSelectedCompletedTimeToStartDate() {
-		return selectedCompletedTimeToStartDate;
+		return selectedCompletedTime;
 	}
 
 	public void setSelectedCompletedTimeToStartDate(double selectedCompletedTimeToStartDate) {
-		this.selectedCompletedTimeToStartDate = selectedCompletedTimeToStartDate;
+		this.selectedCompletedTime = selectedCompletedTimeToStartDate;
 	}
 
 	public Client getClient() {
@@ -77,8 +77,8 @@ public class SelectedCompleted {
 
 	@Override
 	public String toString() {
-		return "SelectedCompleted [selectedCompletedId=" + selectedCompletedId + ", selectedCompletedTimeToStartDate="
-				+ selectedCompletedTimeToStartDate + ", client=" + client + "]";
+		return "SelectedCompleted [selectedCompletedId=" + selectedCompletedId + ", selectedCompletedTime="
+				+ selectedCompletedTime + ", client=" + client + "]";
 	}
 
 
