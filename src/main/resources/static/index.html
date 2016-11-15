@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Revature Associate System</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/css/style.css">
-	<script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
-	<script defer src="resources/js/app.js"></script>
-	<script defer src="resources/js/header.js"></script>
-	<script defer src="resources/js/submission.js"></script>
+<meta charset="UTF-8">
+<title>Revature Associate System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/style.css">
+<script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script defer
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script defer
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script defer
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+<script defer
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
+<script defer src="resources/js/app.js"></script>
+<script defer src="resources/js/header.js"></script>
+<script defer src="resources/js/submission.js"></script>
 </head>
+
+
 <body data-ng-app="RAS">
+
+
+
 	<div data-ng-controller="MainController as main">
 		<div data-ng-controller="HeaderPanel as header">
-			<img id="RevatureLogo" class="Inline" src="https://revature.com/imgs/logo.png"></img>
-			<span class="Inline" id="AlertBar">
-				<h1>Associate System</h1>
-				<p>Alerts Here</p>
-			</span>
-			<span class="Inline" id="UserInfo">
-				<p>User Stuff Here</p>
-			</span>
+			<div class="row">
+				<img id="RevatureLogo" style="margin: 20px;"
+					class="Inline col-sm-offset-2"
+					src="https://revature.com/imgs/logo.png"></img>
+			</div>
+
+			<div class="Container" align="center">
+				<span class="Inline" id="AlertBar">
+					<h1>Associate System</h1>
+					<h3>Alerts Here</h3>
+				</span> <span class="Inline" style="margin-right: 20%;" id="UserInfo">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<!-- I think it'd look best if submissions/client name/user stuff here was on the same row; however perhaps a bit moved up. I have yet
+				to figure out how to treat them as one object and move them up.  -->
+					<p>User Stuff Here</p>
+				</span>
+
+			</div>
+
 		</div>
-		<hr/>
-		<!-- Placement; Only display if placement is available. -->
-		<hr/>
-		<!-- Interviews; Only display if an interview is available. -->
-		<hr/>
-		<div data-ng-controller="SubmissionPanel">
+	</div>
+
+
+	<hr />
+	<!-- Placement; Only display if placement is available. -->
+	<hr />
+	<!-- Interviews; Only display if an interview is available. -->
+	<hr />
+	<div data-ng-controller="SubmissionPanel">
+
+
+		<div class="Container col-sm-offset-2" align="left">
 			<h2>Submissions:</h2>
 			<span id="TestClient">
 				<h3>Client Name</h3>
 				<p>Good to Go!</p>
 			</span>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
