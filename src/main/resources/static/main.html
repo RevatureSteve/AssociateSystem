@@ -18,3 +18,11 @@
 		<p>Good to Go!</p>
 	</span>
 </div>
+<hr/>
+<div data-ng-controller="SubmissionPanel" class="Container"
+	id="SubmissionPanel">
+
+	First Name: <input type="text" ng-model="firstName"><br>
+	Last Name: <input type="text" ng-model="lastName"><br> <br>
+	Full Name: {{firstName + " " + lastName}}
+</div>
