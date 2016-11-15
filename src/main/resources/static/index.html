@@ -6,23 +6,25 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/style.css">
 	<script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
 	<script defer src="resources/js/app.js"></script>
 	<script defer src="resources/js/header.js"></script>
 	<script defer src="resources/js/submission.js"></script>
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
-		<div data-ng-controller="HeaderPanel as header">
-			<img id="RevatureLogo" class="Inline" src="https://revature.com/imgs/logo.png"></img>
-			<span class="Inline" id="AlertBar">
+		<div data-ng-controller="HeaderPanel as header" class="Container">
+			<img id="RevatureLogo" class="Inline"
+				src="https://revature.com/imgs/logo.png"></img><!-- col-sm-offset-2 -->
+			<span class="Container Inline" id="AlertBar"> <!-- col-sm-7 -->
 				<h1>Associate System</h1>
-				<p>Alerts Here</p>
+				<h3>Alerts Here</h3>
 			</span>
-			<span class="Inline" id="UserInfo">
+			<span class="Inline" id="UserInfo"> <!-- col-sm-3 -->
 				<p>User Stuff Here</p>
+				<a href="http://www.google.com">Logout</a>
 			</span>
 		</div>
 		<hr/>

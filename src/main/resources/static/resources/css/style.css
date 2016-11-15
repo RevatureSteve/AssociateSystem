@@ -9,30 +9,32 @@ body
 
 .Inline
 {
-	display:inline-block;
+	display:inline-block!important;
 }
 
 #RevatureLogo
 {
 	padding:0;
-	margin:0;
+	margin:10px;
 	vertical-align:top;
 }
 
 #AlertBar
 {
-	margin-left:2em;
+	margin-left:12%;
 }
 
-#AlertBar > h1
+#AlertBar > h1, #AlertBar > h3
 {
 	margin:0.1em;
-	padding:0.1em;
+	padding:0;
+	line-height:100%;
 }
 
 #UserInfo
 {
-	position:absolute;
-	right:1px;
+	position:absolute!important;
+	right:0;
+	margin:0.5em;
 	width:10%;
 }
