@@ -1,5 +1,42 @@
 @CHARSET "UTF-8";
 
+.ClientName
+{
+	margin-left:15%;
+	font-size:20;
+}
+
+.InterviewInfo, .InterviewInfoSpacer, .InterviewLateInfo
+{
+	display:table-cell;
+}
+
+.InterviewInfo, .InterviewLateInfo
+{
+	font-size:10;
+}
+
+.InterviewInfoSpacer
+{
+	position:relative;
+	bottom:0.4em;
+	height:1px;
+	background-color:black;
+}
+
+.InterviewLateInfo
+{
+	position:absolute;
+	right:0px;
+}
+
+#RefreshInterviewsButton
+{
+	float:right;
+	padding:0;
+	line-height:1em;
+}
+
 #SubmissionPanel
 {
 	margin:1em;
