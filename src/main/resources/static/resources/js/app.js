@@ -7,6 +7,7 @@ app.controller("MainController", function($scope, $rootScope, dataService){
 			$scope.bob = JSON.stringify(response);
 		});
 	}
+
 });
 
 app.config(function($routeProvider) {

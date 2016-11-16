@@ -11,6 +11,65 @@
 			<label class="InterviewInfoData">{{interview.info}}</label>
 		</div>
 	</div>
+	
+	<h1>Jobs</h1>
+	<table id="dummyJobTable">
+		<thead>
+			<tr style="font-weight: bold">
+				<td>Job ID</td>
+				<td>Account</td>
+				<td>Client</td>
+				<td>City</td>
+				<td>State</td>
+				<td>Date Created</td>
+			</tr>
+		</thead>
+		<tbody data-ng-repeat="job in dummyJobs">
+			<tr>
+				<td>{{job.jobId}}</td>
+				<td>{{job.account.accountName}}</td>
+				<td>{{job.client.clientName}}</td>
+				<td>{{job.jobCity}}</td>
+				<td>{{job.jobState}}</td>
+				<td>{{job.jobTimestamp}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	
+	<h1>Interviews</h1>
+	<table id="dummyInterviewTable">
+		<thead>
+			<tr style="font-weight: bold">
+				<td>Interview ID</td>
+				<td>Job Number</td>
+				<td>Account</td>
+				<td>Client</td>
+				<td>Job Title</td>
+				<td>Interview Time</td>
+				<td>City</td>
+				<td>State</td>
+				<td>Interview Type</td>
+				<td>Overall Feedback</td>
+			</tr>
+		</thead>
+		<tbody data-ng-repeat="interview in dummyInterviews">
+			<tr>
+				<td>{{interview.interviewId}}</td>
+				<td>{{interview.interviewJobNumber}}</td>
+				<td>{{interview.job.account.accountName}}</td>
+				<td>{{interview.job.client.clientName}}</td>
+				<td>{{interview.job.jobTitle}}</td>
+				<td>{{interview.interviewTime}}</td>
+				<td>{{interview.job.jobCity}}</td>
+				<td>{{interview.job.jobState}}</td>
+				<td>{{interview.interviewType}}</td>
+				<td>{{interview.interviewFeedback}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	
 </div>
 <hr/>
 <div data-ng-controller="SubmissionPanel" class="Container"
