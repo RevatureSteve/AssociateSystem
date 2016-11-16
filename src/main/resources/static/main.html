@@ -5,9 +5,11 @@
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
 	<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
 		<h3 class="ClientName">{{interview.client}}</h3>
-		<label class="InterviewInfo">{{interview.info}}</label>
-		<span class="InterviewInfoSpacer"><label>...</label></span>
-		<label class="InterviewLateInfo">{{interview.info}}</label>
+		<div class="InterviewInfo">
+			<label class="InterviewInfoDescription">{{interview.info}}</label>
+			<span class="InterviewInfoSpacer">.</span>
+			<label class="InterviewInfoData">{{interview.info}}</label>
+		</div>
 	</div>
 </div>
 <hr/>
