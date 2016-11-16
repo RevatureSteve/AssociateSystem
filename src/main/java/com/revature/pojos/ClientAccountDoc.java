@@ -19,9 +19,9 @@ import javax.persistence.Table;
 public class ClientAccountDoc {
 
 	@Id 
-	@SequenceGenerator(name="client_account_doc_id_seq", sequenceName="client_account_doc_id_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="client_account_doc_id_seq")
-	@Column(name="client_account_doc_id")
+	@SequenceGenerator(name="cad_id_seq", sequenceName="cad_id_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="cad_id_seq")
+	@Column(name="cad_id")
 	private int clientAccountDocId;
 
 	@ManyToMany
