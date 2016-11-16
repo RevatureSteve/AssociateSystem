@@ -16,10 +16,11 @@ public class RepoApplicationTest {
 	@Autowired
 	AccountRepo accountRepo;
 	
-	@Test
+	
 	public void makeAccountRepo() {
 		Account account = new Account("Walmart");
 		accountRepo.save(account);
+		System.out.println("Account made");
 	}
 
 }
