@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table (name="interview")
@@ -22,7 +23,8 @@ public class Interview {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="interview_id_seq")
 	@Column(name="interview_id")
 	private int interviewId;
-
+	
+	@Transient
 	@Column(name = "interview_marketer")
 	private String interviewMarketer;
 
