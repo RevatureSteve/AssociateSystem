@@ -1,21 +1,16 @@
 package com.revature.pojos;
 
-import java.util.List;
+import java.sql.Timestamp;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="job")
@@ -44,11 +39,11 @@ public class Job {
 	
 	public Job() {}
 
-	public Job(Client client, Account account, double job_contract_length, List<User> users) {
+	public Job(Client client, Account account, double jobContractLength) {
 		super();
 		this.client = client;
 		this.account = account;
-		this.jobContractLength = job_contract_length;
+		this.jobContractLength = jobContractLength;
 	}
 
 	public int getJobId() {
@@ -85,9 +80,8 @@ public class Job {
 
 	@Override
 	public String toString() {
-		return "Job [jobId=" + jobId + ", jobContractLength=" + jobContractLength + "]";
+		return "Job [jobId=" + jobId + ", client=" + client + ", account=" + account + ", jobContractLength="
+				+ jobContractLength + "]";
 	}
-
-	
 
 }

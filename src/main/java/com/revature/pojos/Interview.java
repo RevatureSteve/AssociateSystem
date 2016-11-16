@@ -29,12 +29,8 @@ public class Interview {
 	private String interviewMarketer;
 
 	@ManyToOne
-	@JoinColumn(name="client_id")
-	private Client client;
-
-	@ManyToOne
-	@JoinColumn(name="account_id")
-	private Account account;
+	@JoinColumn(name="job_id")
+	private Job job;
 	
 	@OneToOne
 	@JoinColumn(name="status_id")
@@ -52,12 +48,11 @@ public class Interview {
 	
 	public Interview(){}
 
-	public Interview(String interviewMarketer, Client client, Account account, Status status,
+	public Interview(String interviewMarketer, Job job, Status status,
 			User user, Timestamp interviewTime, int interviewRound) {
 		super();
 		this.interviewMarketer = interviewMarketer;
-		this.client = client;
-		this.account = account;
+		this.job = job;
 		this.status = status;
 		this.user = user;
 		this.interviewTime = interviewTime;
@@ -78,22 +73,6 @@ public class Interview {
 
 	public void setInterviewMarketer(String interviewMarketer) {
 		this.interviewMarketer = interviewMarketer;
-	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 
 	public Status getStatus() {
@@ -128,13 +107,19 @@ public class Interview {
 		this.interviewRound = interviewRound;
 	}
 
-	@Override
-	public String toString() {
-		return "Interview [interviewId=" + interviewId + ", interviewMarketer=" + interviewMarketer + ", user=" + user
-				+ ", interviewTime=" + interviewTime + ", interviewRound=" + interviewRound + "]";
+	public Job getJob() {
+		return job;
 	}
 
-	
-	
+	public void setJob(Job job) {
+		this.job = job;
+	}
+
+	@Override
+	public String toString() {
+		return "Interview [interviewId=" + interviewId + ", interviewMarketer=" + interviewMarketer + ", job=" + job
+				+ ", status=" + status + ", user=" + user + ", interviewTime=" + interviewTime + ", interviewRound="
+				+ interviewRound + "]";
+	}
 
 }

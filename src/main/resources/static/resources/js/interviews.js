@@ -10,6 +10,18 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 		});
 	};
 	$scope.refreshAll();
+	
+	// Dummy jobs/interviews!
+	// We will get some dummy data and show it in a table
+	$scope.dummyJobs = null;
+	$scope.dummyInterviews = null;
+	interviewDataService.getDummyJobs(function(response) {
+		$scope.dummyJobs = response.data;
+	})
+	interviewDataService.getDummyInterviews(function(response) {
+		$scope.dummyInterviews = response.data;
+		console.log("interviews: " + JSON.stringify(response.data));
+	})
 });
 
 app.service("interviewDataService",function($http){
@@ -50,4 +62,12 @@ app.service("interviewDataService",function($http){
 			]
 		});
 	};
+	
+	this.getDummyJobs = function(callback) {
+		$http.get('dummyJobs').then(callback);
+	}
+	
+	this.getDummyInterviews = function(callback) {
+		$http.get('dummyInterviews').then(callback);
+	}
 });

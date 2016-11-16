@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +10,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.dao.AccountRepo;
+import com.revature.dao.ClientRepo;
 import com.revature.dao.InterviewRepo;
+import com.revature.dao.JobRepo;
 import com.revature.dao.UserRepo;
 import com.revature.dto.AuthenticationDTO;
+import com.revature.dto.InterviewDTO;
+import com.revature.dto.JobDTO;
+import com.revature.pojos.Account;
+import com.revature.pojos.Client;
 import com.revature.pojos.Interview;
+import com.revature.pojos.Job;
 import com.revature.pojos.User;
 
 @RestController
@@ -22,6 +32,15 @@ public class ClientController {
 	
 	@Autowired
 	private UserRepo userRepo;
+	
+	@Autowired
+	private JobRepo jobRepo;
+	
+	@Autowired
+	private AccountRepo accountRepo;
+	
+	@Autowired
+	private ClientRepo clientRepo;
 	
 	@RequestMapping(value = "/authenticate")
 	public ResponseEntity<User> authenticate(AuthenticationDTO auth) {
@@ -69,4 +88,70 @@ public class ClientController {
 		List<Interview> list = interviewRepo.findByUser(userRepo.findOneByUserId(100));
 		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
 	}
+
+	@RequestMapping(value = "/dummyJobs")
+	public ResponseEntity<List<JobDTO>> dummyJobs() {
+		// Generates dummy JobDTOs for a demo
+		Account a1 = new Account();
+		a1.setAccountName("Wipro");
+		Account a2 = new Account();
+		a2.setAccountName("ITC");
+		
+		Client c1 = new Client();
+		c1.setClientName("Wipro");
+		Client c2 = new Client();
+		c2.setClientName("Walmart");
+		
+		JobDTO j1 = new JobDTO();
+		j1.setJobId(101);
+		j1.setAccount(a1);
+		j1.setClient(c1);
+		j1.setJobCity("Plano");
+		j1.setJobCity("Texas");
+		j1.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
+		
+		JobDTO j2 = new JobDTO();
+		j2.setJobId(102);
+		j2.setAccount(a2);
+		j2.setClient(c2);
+		j2.setJobCity("Orlando");
+		j2.setJobState("Florida");
+		j2.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
+		
+		List<JobDTO> list = new ArrayList<>();
+		list.add(j1);
+		list.add(j2);
+		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
+	}
+	
+	@RequestMapping(value = "/dummyInterviews")
+	public ResponseEntity<List<InterviewDTO>> dummyInterviews() {
+		// Generates dummy InterviewDTOs for a demo
+		Account a2 = new Account();
+		a2.setAccountName("ITC");
+		
+		Client c2 = new Client();
+		c2.setClientName("Walmart");
+		
+		JobDTO j2 = new JobDTO();
+		j2.setJobId(102);
+		j2.setAccount(a2);
+		j2.setClient(c2);
+		j2.setJobCity("Orlando");
+		j2.setJobState("Florida");
+		j2.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
+		j2.setJobTitle("Jr. Java Developer");
+		
+		InterviewDTO i1 = new InterviewDTO();
+		i1.setInterviewId(101);
+		i1.setJob(j2);
+		i1.setInterviewTime(new Timestamp(System.currentTimeMillis()));
+		i1.setInterviewFeedback("Outrageous.");
+		i1.setInterviewType("Skype");
+		
+		List<InterviewDTO> list = new ArrayList<>();
+		list.add(i1);
+		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
+	}
+	
 }
