@@ -23,4 +23,4 @@ app.service("dataService", function($http, $rootScope) {
 	this.goToMain = function(callback) {
 		$http.get('home').then(callback);
 	}
-})
+});
