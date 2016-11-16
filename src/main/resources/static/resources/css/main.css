@@ -6,28 +6,19 @@
 	font-size:20;
 }
 
-.InterviewInfo, .InterviewInfoSpacer, .InterviewLateInfo
+.InterviewInfoDescription, .InterviewInfoSpacer, .InterviewInfoData
 {
 	display:table-cell;
-}
-
-.InterviewInfo, .InterviewLateInfo
-{
 	font-size:10;
 }
 
 .InterviewInfoSpacer
 {
 	position:relative;
+	width:100%;
 	bottom:0.4em;
 	height:1px;
 	background-color:black;
-}
-
-.InterviewLateInfo
-{
-	position:absolute;
-	right:0px;
 }
 
 #RefreshInterviewsButton
