@@ -3,12 +3,22 @@
 <hr/>
 <div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
-	<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
-		<h3 class="ClientName">{{interview.client}}</h3>
-		<div class="InterviewInfo">
-			<label class="InterviewInfoDescription">{{interview.info}}</label>
-			<span class="InterviewInfoSpacer">.</span>
-			<label class="InterviewInfoData">{{interview.info}}</label>
+	<div class="InterviewTable">
+		<div class="InterviewBlock">
+			<label class="InterviewInfoCell">I_ID</label>
+			<label class="InterviewInfoCell">Job_Num</label>
+			<label class="InterviewInfoCell">Account</label>
+			<label class="InterviewInfoCell">Client</label>
+			<label class="InterviewInfoCell">Job Title</label>
+			<label class="InterviewInfoCell">Interview Time</label>
+		</div>
+		<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
+			<label class="InterviewInfoCell">{{interview.interviewId}}</label>
+			<label class="InterviewInfoCell">{{interview.job.jobId}}</label>
+			<label class="InterviewInfoCell">{{interview.job.account.accountName}}</label>
+			<label class="InterviewInfoCell">{{interview.job.client.clientName}}</label>
+			<label class="InterviewInfoCell">{{interview.job.jobTitle}}</label>
+			<label class="InterviewInfoCell">{{interview.interviewTime}}</label>
 		</div>
 	</div>
 </div>
