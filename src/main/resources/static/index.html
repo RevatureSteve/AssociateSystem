@@ -11,10 +11,14 @@
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
 	<script defer src="resources/js/app.js"></script>
 	<script defer src="resources/js/header.js"></script>
+	<script defer src="resources/js/interviews.js"></script>
 	<script defer src="resources/js/submission.js"></script>
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
+			<button type="button" data-ng-click="goToMain()" class="btn btn-primary">TEST BUTTON</button>
+			<h3>Output: {{bob}}</h3>
+			
 		<div data-ng-controller="HeaderPanel as header" class="Container">
 			<img id="RevatureLogo" class="Inline"
 				src="https://revature.com/imgs/logo.png"></img><!-- col-sm-offset-2 -->
