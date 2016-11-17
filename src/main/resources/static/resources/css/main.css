@@ -1,26 +1,5 @@
 @CHARSET "UTF-8";
 
-.ClientName
-{
-	margin-left:15%;
-	font-size:20;
-}
-
-.InterviewInfoDescription, .InterviewInfoSpacer, .InterviewInfoData
-{
-	display:table-cell;
-	font-size:10;
-}
-
-.InterviewInfoSpacer
-{
-	position:relative;
-	width:100%;
-	bottom:0.4em;
-	height:1px;
-	background-color:black;
-}
-
 #RefreshInterviewsButton
 {
 	float:right;

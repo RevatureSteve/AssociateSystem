@@ -13,21 +13,22 @@
 	<script defer src="resources/js/header.js"></script>
 	<script defer src="resources/js/interviews.js"></script>
 	<script defer src="resources/js/submission.js"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script defer src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
-			<button type="button" data-ng-click="goToMain()" class="btn btn-primary">TEST BUTTON</button>
-			<h3>Output: {{bob}}</h3>
-			
 		<div data-ng-controller="HeaderPanel as header" class="Container">
 			<img id="RevatureLogo" class="Inline"
-				src="https://revature.com/imgs/logo.png"></img><!-- col-sm-offset-2 -->
-			<span class="Container Inline" id="AlertBar"> <!-- col-sm-7 -->
+				src="https://revature.com/imgs/logo.png"></img>
+			<span class="Container Inline" id="AlertBar">
 				<h1>Associate System</h1>
 				<h3>Alerts Here</h3>
 			</span>
-			<span class="Inline" id="UserInfo"> <!-- col-sm-3 -->
-				<p>User Stuff Here</p>
+			<span class="Inline" id="UserInfo">
+				<input class="UserTextBox" type="text" ng-model="firstName" size=12 placeholder="First Name:"><br/>
+				<input class="UserTextBox" type="text" ng-model="lastName" size=12 placeholder="Last Name:"><br/>
+				<label>Full Name: {{firstName + " " + lastName}}</label><br/>
 				<a href="http://www.google.com">Logout</a>
 			</span>
 		</div>

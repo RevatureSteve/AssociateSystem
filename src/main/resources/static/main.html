@@ -2,20 +2,64 @@
 <!-- Placement; Only display if placement is available. -->
 <hr/>
 <div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
+	<h2>Interviews</h2>
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
-	<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
-		<h3 class="ClientName">{{interview.client}}</h3>
-		<div class="InterviewInfo">
-			<label class="InterviewInfoDescription">{{interview.info}}</label>
-			<span class="InterviewInfoSpacer">.</span>
-			<label class="InterviewInfoData">{{interview.info}}</label>
-		</div>
-	</div>
+	<table id="InterviewTable">
+		<thead>
+			<tr>
+				<th><label>Interview ID</label></th>
+				<th><label>Job Number</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>Job Title</label></th>
+				<th><label>Interview Time</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Interview Type</label></th>
+				<th><label>Overall Feedback</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="interview in getAllInterviews()">
+				<td><label>{{interview.interviewId}}</label></td>
+				<td><label>{{interview.interviewJobNumber}}</label></td>
+				<td><label>{{interview.job.account.accountName}}</label></td>
+				<td><label>{{interview.job.client.clientName}}</label></td>
+				<td><label>{{interview.job.jobTitle}}</label></td>
+				<td><label>{{interview.interviewTime}}</label></td>
+				<td><label>{{interview.job.jobCity}}</label></td>
+				<td><label>{{interview.job.jobState}}</label></td>
+				<td><label>{{interview.interviewType}}</label></td>
+				<td><label>{{interview.interviewFeedback}}</label></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h1>Jobs</h1>
+	<table id="dummyJobTable">
+		<thead>
+			<tr style="font-weight: bold">
+				<td>Job ID</td>
+				<td>Account</td>
+				<td>Client</td>
+				<td>City</td>
+				<td>State</td>
+				<td>Date Created</td>
+			</tr>
+		</thead>
+		<tbody data-ng-repeat="job in getAllJobs()">
+			<tr>
+				<td>{{job.jobId}}</td>
+				<td>{{job.account.accountName}}</td>
+				<td>{{job.client.clientName}}</td>
+				<td>{{job.jobCity}}</td>
+				<td>{{job.jobState}}</td>
+				<td>{{job.jobTimestamp}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <hr/>
 <div data-ng-controller="SubmissionPanel" class="Container"
 	id="SubmissionPanel">
-	First Name: <input type="text" ng-model="firstName"><br>
-	Last Name: <input type="text" ng-model="lastName"><br> <br>
-	Full Name: {{firstName + " " + lastName}}
 </div>
