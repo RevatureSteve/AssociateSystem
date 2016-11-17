@@ -34,30 +34,6 @@
 			</tr>
 		</tbody>
 	</table>
-	
-	<h1>Jobs</h1>
-	<table id="dummyJobTable">
-		<thead>
-			<tr style="font-weight: bold">
-				<td>Job ID</td>
-				<td>Account</td>
-				<td>Client</td>
-				<td>City</td>
-				<td>State</td>
-				<td>Date Created</td>
-			</tr>
-		</thead>
-		<tbody data-ng-repeat="job in getAllJobs()">
-			<tr>
-				<td>{{job.jobId}}</td>
-				<td>{{job.account.accountName}}</td>
-				<td>{{job.client.clientName}}</td>
-				<td>{{job.jobCity}}</td>
-				<td>{{job.jobState}}</td>
-				<td>{{job.jobTimestamp}}</td>
-			</tr>
-		</tbody>
-	</table>
 </div>
 <hr/>
 <div data-ng-controller="SubmissionPanel" class="Container"
