@@ -24,7 +24,7 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 
 app.service("interviewDataService",function($http){
 	this.getAllInterviews=function(callback){
-		$http.get('dummyInterviews').then(callback);
+		$http.get('interviews').then(callback);
 	};
 	
 	this.getAllJobs = function(callback) {
