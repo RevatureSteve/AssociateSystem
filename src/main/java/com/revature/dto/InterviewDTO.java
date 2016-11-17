@@ -2,19 +2,8 @@ package com.revature.dto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Calendar;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-
-import com.revature.pojos.Account;
-import com.revature.pojos.Client;
-import com.revature.pojos.Job;
 import com.revature.pojos.Status;
 import com.revature.pojos.User;
 
@@ -90,8 +79,23 @@ public class InterviewDTO implements Serializable {
 		this.user = user;
 	}
 
-	public Timestamp getInterviewTime() {
-		return interviewTime;
+	@SuppressWarnings("deprecation")
+	public String getInterviewTime() {
+		String str = interviewTime.toString();
+		String suffix = " AM";
+		if (interviewTime.getHours() >= 12) {
+			suffix = " PM";
+			if (interviewTime.getHours() > 12) {
+				interviewTime.setHours(interviewTime.getHours() - 12);
+				str = interviewTime.toString();
+				interviewTime.setHours(interviewTime.getHours() + 12);
+			}
+		} else if (interviewTime.getHours() == 0) {
+			interviewTime.setHours(interviewTime.getHours() + 12);
+			str = interviewTime.toString();
+			interviewTime.setHours(interviewTime.getHours() - 12);
+		}
+		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}
 
 	public void setInterviewTime(Timestamp interviewTime) {

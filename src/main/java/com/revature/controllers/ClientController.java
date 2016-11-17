@@ -108,7 +108,7 @@ public class ClientController {
 		j1.setClient(c1);
 		j1.setJobCity("Plano");
 		j1.setJobState("Texas");
-		j1.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
+		j1.setJobTimestamp(new Timestamp(System.currentTimeMillis() + (1000*3600)));
 		
 		JobDTO j2 = new JobDTO();
 		j2.setJobId(102);
@@ -116,7 +116,7 @@ public class ClientController {
 		j2.setClient(c2);
 		j2.setJobCity("Orlando");
 		j2.setJobState("Florida");
-		j2.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
+		j2.setJobTimestamp(new Timestamp(System.currentTimeMillis() + (2000*3600)));
 		
 		List<JobDTO> list = new ArrayList<>();
 		list.add(j1);
