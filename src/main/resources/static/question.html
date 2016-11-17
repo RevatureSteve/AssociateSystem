@@ -2,5 +2,31 @@
 <!-- Placement; Only display if placement is available. -->
 <hr/>
 <div data-ng-controller="QuestionPanel" class="Container" id="QuestionPanel">
-	<h1>TEMP: Question bank page</h1>
+
+	<h1>Question Bank</h1>
+	<br>
+	
+	<h3>Search by Question</h3>
+	<input id="searchQuestionInput" placeholder="Enter a question" size="100"> <button id="searchQuestionBtn" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+	
+	<br>
+	<h3>Filter</h3>
+	
+	Track<select id="filterTrackSelect">
+		<option>Java</option>
+		<option>SDET</option>
+		<option>.NET</option>
+		<option>C#</option>
+		<option>Appian</option>
+	</select> <button class="btn btn-primary" id="filterTrackBtn"><span class="glyphicon glyphicon-search"></span></button>
+	
+	Popularity<select id="filterPopularitySelect">
+		<option>Most Commonly Asked</option>
+		<option>Least Commonly Asked</option>
+	</select> <button class="btn btn-primary" id="filterPopularityBtn"><span class="glyphicon glyphicon-search"></span></button>
+	
+	Client
+	<input id="searchClientInput" placeholder="Enter clients (comma-separated list)" size="50"> <button id="searchClientBtn" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+	
+	
 </div>
