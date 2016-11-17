@@ -11,10 +11,6 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 		interviewDataService.getAllInterviews(function(response){
 			$scope.interviews=response.data;
 			setTimeout(function(){
-				var toBeRemoved=$("#dataTables_empty").parentElement;
-				if(toBeRemoved){
-					toBeRemoved.parentElement.remove(toBeRemoved);
-				}
 				$("#InterviewTable").DataTable();
 			},1000);
 		});
@@ -28,7 +24,7 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 
 app.service("interviewDataService",function($http){
 	this.getAllInterviews=function(callback){
-		$http.get('dummyInterviews').then(callback);
+		$http.get('interviews').then(callback);
 	};
 	
 	this.getAllJobs = function(callback) {
