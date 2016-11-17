@@ -90,6 +90,9 @@ public class JobDTO implements Serializable {
 			suffix = " PM";
 		}
 		String str = jobTimestamp.toString();
+		if (suffix.equals(" PM")) {
+			jobTimestamp.setHours(jobTimestamp.getHours() + 12);
+		}
 		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}
 

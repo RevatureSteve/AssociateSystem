@@ -87,6 +87,9 @@ public class InterviewDTO implements Serializable {
 			suffix = " PM";
 		}
 		String str = interviewTime.toString();
+		if (suffix.equals(" PM")) {
+			interviewTime.setHours(interviewTime.getHours() + 12);
+		}
 		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}
 
