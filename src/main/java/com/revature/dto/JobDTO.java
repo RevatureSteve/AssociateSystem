@@ -93,6 +93,10 @@ public class JobDTO implements Serializable {
 				str = jobTimestamp.toString();
 				jobTimestamp.setHours(jobTimestamp.getHours() + 12);
 			}
+		} else if (jobTimestamp.getHours() == 0) {
+			jobTimestamp.setHours(jobTimestamp.getHours() + 12);
+			str = jobTimestamp.toString();
+			jobTimestamp.setHours(jobTimestamp.getHours() - 12);
 		}
 		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}

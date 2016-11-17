@@ -90,6 +90,10 @@ public class InterviewDTO implements Serializable {
 				str = interviewTime.toString();
 				interviewTime.setHours(interviewTime.getHours() + 12);
 			}
+		} else if (interviewTime.getHours() == 0) {
+			interviewTime.setHours(interviewTime.getHours() + 12);
+			str = interviewTime.toString();
+			interviewTime.setHours(interviewTime.getHours() - 12);
 		}
 		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}
