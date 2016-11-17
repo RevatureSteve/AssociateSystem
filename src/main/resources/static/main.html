@@ -2,25 +2,38 @@
 <!-- Placement; Only display if placement is available. -->
 <hr/>
 <div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
+	<h2>Interviews</h2>
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
-	<div class="InterviewTable">
-		<div class="InterviewBlock">
-			<label class="InterviewInfoCell">I_ID</label>
-			<label class="InterviewInfoCell">Job_Num</label>
-			<label class="InterviewInfoCell">Account</label>
-			<label class="InterviewInfoCell">Client</label>
-			<label class="InterviewInfoCell">Job Title</label>
-			<label class="InterviewInfoCell">Interview Time</label>
-		</div>
-		<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
-			<label class="InterviewInfoCell">{{interview.interviewId}}</label>
-			<label class="InterviewInfoCell">{{interview.job.jobId}}</label>
-			<label class="InterviewInfoCell">{{interview.job.account.accountName}}</label>
-			<label class="InterviewInfoCell">{{interview.job.client.clientName}}</label>
-			<label class="InterviewInfoCell">{{interview.job.jobTitle}}</label>
-			<label class="InterviewInfoCell">{{interview.interviewTime}}</label>
-		</div>
-	</div>
+	<table id="InterviewTable">
+		<thead>
+			<tr>
+				<th><label>I_ID</label></th>
+				<th><label>Job_Num</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>Job Title</label></th>
+				<th><label>Interview Time</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Type</label></th>
+				<th><label>Feedback</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="interview in getAllInterviews()">
+				<td><label>{{interview.interviewId}}</label></td>
+				<td><label>{{interview.interviewJobNumber}}</label></td>
+				<td><label>{{interview.job.account.accountName}}</label></td>
+				<td><label>{{interview.job.client.clientName}}</label></td>
+				<td><label>{{interview.job.jobTitle}}</label></td>
+				<td><label>{{interview.interviewTime}}</label></td>
+				<td><label>{{interview.job.jobCity}}</label></td>
+				<td><label>{{interview.job.jobState}}</label></td>
+				<td><label>{{interview.job.interviewType}}</label></td>
+				<td><label>{{interview.job.interviewFeedback}}</label></td>
+			</tr>
+		</tbody>
+	</table>
 	
 	<h1>Jobs</h1>
 	<table id="dummyJobTable">
@@ -34,7 +47,7 @@
 				<td>Date Created</td>
 			</tr>
 		</thead>
-		<tbody data-ng-repeat="job in dummyJobs">
+		<tbody data-ng-repeat="job in getAllJobs()">
 			<tr>
 				<td>{{job.jobId}}</td>
 				<td>{{job.account.accountName}}</td>
@@ -45,41 +58,6 @@
 			</tr>
 		</tbody>
 	</table>
-	<br>
-	
-	<h1>Interviews</h1>
-	<table id="dummyInterviewTable">
-		<thead>
-			<tr style="font-weight: bold">
-				<td>Interview ID</td>
-				<td>Job Number</td>
-				<td>Account</td>
-				<td>Client</td>
-				<td>Job Title</td>
-				<td>Interview Time</td>
-				<td>City</td>
-				<td>State</td>
-				<td>Interview Type</td>
-				<td>Overall Feedback</td>
-			</tr>
-		</thead>
-		<tbody data-ng-repeat="interview in dummyInterviews">
-			<tr>
-				<td>{{interview.interviewId}}</td>
-				<td>{{interview.interviewJobNumber}}</td>
-				<td>{{interview.job.account.accountName}}</td>
-				<td>{{interview.job.client.clientName}}</td>
-				<td>{{interview.job.jobTitle}}</td>
-				<td>{{interview.interviewTime}}</td>
-				<td>{{interview.job.jobCity}}</td>
-				<td>{{interview.job.jobState}}</td>
-				<td>{{interview.interviewType}}</td>
-				<td>{{interview.interviewFeedback}}</td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	
 </div>
 <hr/>
 <div data-ng-controller="SubmissionPanel" class="Container"
