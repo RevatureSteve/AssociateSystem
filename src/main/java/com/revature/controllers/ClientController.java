@@ -107,7 +107,7 @@ public class ClientController {
 		j1.setAccount(a1);
 		j1.setClient(c1);
 		j1.setJobCity("Plano");
-		j1.setJobCity("Texas");
+		j1.setJobState("Texas");
 		j1.setJobTimestamp(new Timestamp(System.currentTimeMillis()));
 		
 		JobDTO j2 = new JobDTO();
@@ -146,8 +146,9 @@ public class ClientController {
 		i1.setInterviewId(101);
 		i1.setJob(j2);
 		i1.setInterviewTime(new Timestamp(System.currentTimeMillis()));
-		i1.setInterviewFeedback("Outrageous.");
+		i1.setInterviewFeedback("Outrageous work.");
 		i1.setInterviewType("Skype");
+		i1.setInterviewJobNumber(101);
 		
 		List<InterviewDTO> list = new ArrayList<>();
 		list.add(i1);
