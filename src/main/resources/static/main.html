@@ -20,7 +20,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr data-ng-repeat="interview in getAllInterviews()">
+			<tr data-ng-repeat="interview in interviews">
 				<td><label>{{interview.interviewId}}</label></td>
 				<td><label>{{interview.interviewJobNumber}}</label></td>
 				<td><label>{{interview.job.account.accountName}}</label></td>
@@ -36,6 +36,29 @@
 	</table>
 </div>
 <hr/>
-<div data-ng-controller="SubmissionPanel" class="Container"
-	id="SubmissionPanel">
+<div data-ng-controller="SubmissionPanel" class="Container"	id="SubmissionPanel">
+	<h2>Job Applications</h2>
+	<input type="button" id="RefreshSubmissionsButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
+	<table id="SubmissionTable">
+		<thead>
+			<tr>
+				<th><label>JA_ID</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Date Submitted</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="submission in submissions">
+				<td><label>{{submission.JA_ID}}</label></td>
+				<td><label>{{submission.job.account.accountName}}</label></td>
+				<td><label>{{submission.job.client.clientName}}</label></td>
+				<td><label>{{submission.job.jobCity}}</label></td>
+				<td><label>{{submission.job.jobState}}</label></td>
+				<td><label>{{submission.timeSubmitted}}</label></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
