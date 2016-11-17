@@ -84,14 +84,15 @@ public class JobDTO implements Serializable {
 
 	@SuppressWarnings("deprecation")
 	public String getJobTimestamp() {
+		String str = jobTimestamp.toString();
 		String suffix = " AM";
 		if (jobTimestamp.getHours() >= 12) {
-			jobTimestamp.setHours(jobTimestamp.getHours() - 12);
 			suffix = " PM";
-		}
-		String str = jobTimestamp.toString();
-		if (suffix.equals(" PM")) {
-			jobTimestamp.setHours(jobTimestamp.getHours() + 12);
+			if (jobTimestamp.getHours() > 12) {
+				jobTimestamp.setHours(jobTimestamp.getHours() - 12);
+				str = jobTimestamp.toString();
+				jobTimestamp.setHours(jobTimestamp.getHours() + 12);
+			}
 		}
 		return str.substring(0, str.lastIndexOf(":")) + suffix;
 	}
