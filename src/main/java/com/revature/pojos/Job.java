@@ -29,10 +29,12 @@ public class Job {
 	
 	@ManyToOne
 	@JoinColumn(name="client_id")
+	@Fetch(FetchMode.JOIN)
 	private Client client;
 
 	@ManyToOne
 	@JoinColumn(name="account_id")
+	@Fetch(FetchMode.JOIN)
 	private Account account;
 	
 	@Column(name="job_contract_length")
