@@ -5,13 +5,16 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 		interviewDataService.getAllInterviews(function(response){
 			$scope.interviews=response.data;
 			$rootScope.lazilyInitializeDataTable("InterviewTable");
+		},
+		function(){
+			$rootScope.lazilyInitializeDataTable("SubmissionTable");
 		});
 	};
 	$scope.refreshAll();
 });
 
 app.service("interviewDataService",function($http){
-	this.getAllInterviews=function(callback){
-		$http.get('interviews').then(callback);
+	this.getAllInterviews=function(callback,fallback){
+		$http.get('interviews').then(callback,fallback);
 	};
 });
