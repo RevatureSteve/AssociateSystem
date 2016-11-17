@@ -89,7 +89,7 @@ public class ClientController {
 		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
 	}
 
-	@RequestMapping(value = "/dummyJobs")
+	@RequestMapping(value = "/jobs")
 	public ResponseEntity<List<JobDTO>> dummyJobs() {
 		// Generates dummy JobDTOs for a demo
 		Account a1 = new Account();
@@ -124,7 +124,7 @@ public class ClientController {
 		return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
 	}
 	
-	@RequestMapping(value = "/dummyInterviews")
+	@RequestMapping(value = "/interviews")
 	public ResponseEntity<List<InterviewDTO>> dummyInterviews() {
 		// Generates dummy InterviewDTOs for a demo
 		Account a2 = new Account();
