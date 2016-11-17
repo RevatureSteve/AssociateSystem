@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="resources/css/main.css">
 <!-- Placement; Only display if placement is available. -->
 <hr/>
-<div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
+<div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
 	<h2>Interviews</h2>
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
 	<table id="InterviewTable">
@@ -36,7 +36,7 @@
 	</table>
 </div>
 <hr/>
-<div data-ng-controller="SubmissionPanel" class="Container"	id="SubmissionPanel">
+<div data-ng-controller="SubmissionPanel" class="Container InfoPanel" id="SubmissionPanel">
 	<h2>Job Applications</h2>
 	<input type="button" id="RefreshSubmissionsButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
 	<table id="SubmissionTable">
