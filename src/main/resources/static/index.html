@@ -20,13 +20,15 @@
 	<div data-ng-controller="MainController as main">
 		<div data-ng-controller="HeaderPanel as header" class="Container">
 			<img id="RevatureLogo" class="Inline"
-				src="https://revature.com/imgs/logo.png"></img><!-- col-sm-offset-2 -->
-			<span class="Container Inline" id="AlertBar"> <!-- col-sm-7 -->
+				src="https://revature.com/imgs/logo.png"></img>
+			<span class="Container Inline" id="AlertBar">
 				<h1>Associate System</h1>
 				<h3>Alerts Here</h3>
 			</span>
-			<span class="Inline" id="UserInfo"> <!-- col-sm-3 -->
-				<p>User Stuff Here</p>
+			<span class="Inline" id="UserInfo">
+				<input type="text" ng-model="firstName" placeholder="First Name:"><br/>
+				<input type="text" ng-model="lastName" placeholder="Last Name:"><br/>
+				<label>Full Name: {{firstName + " " + lastName}}</label>
 				<a href="http://www.google.com">Logout</a>
 			</span>
 		</div>
