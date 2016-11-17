@@ -15,6 +15,9 @@ app.config(function($routeProvider) {
     })
     .when("/main", {
         templateUrl : "main.html"
+    })
+    .when("/question", {
+        templateUrl : "question.html"
     });
 });
 

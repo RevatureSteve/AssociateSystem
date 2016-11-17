@@ -44,3 +44,14 @@ body
 	margin:0.5em;
 	width:15%;
 }
+
+#navigationBar {
+    border-bottom: solid black;
+	font-weight: bold;
+	width: 100%;
+	position: absolute;
+	padding: 15px;
+}
+#navigationBar > a {
+	padding: 25px;
+}
