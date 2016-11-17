@@ -11,12 +11,16 @@ app.controller("InterviewsPanel",function($scope,$rootScope,interviewDataService
 		interviewDataService.getAllInterviews(function(response){
 			$scope.interviews=response.data;
 			setTimeout(function(){
-				$("#InterviewTable").DataTable();
+				$scope.interviewDataTable=$scope.interviewDataTable||$("#InterviewTable").DataTable();
+				//$scope.interviewDataTable.draw();
 			},1000);
 		});
 		interviewDataService.getAllJobs(function(response){
 			$scope.jobs=response.data;
-			$("#dummyJobTable").DataTable();
+			setTimeout(function(){
+				$scope.jobDataTable=$scope.jobDataTable||$("#dummyJobTable").DataTable();
+				//$scope.jobDataTable.draw();
+			},1000);
 		});
 	};
 	$scope.refreshAll();
