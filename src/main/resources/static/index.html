@@ -18,6 +18,7 @@
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
+	
 		<div data-ng-controller="HeaderPanel as header" class="Container">
 			<img id="RevatureLogo" class="Inline"
 				src="https://revature.com/imgs/logo.png"></img>
@@ -31,9 +32,18 @@
 				<label>Full Name: {{firstName + " " + lastName}}</label><br/>
 				<a href="http://www.google.com">Logout</a>
 			</span>
+			<br>
+			<span class="navigationBar" id="navigationBar">
+				<a href="#/">Home</a>
+				<a href="#/question">Question Bank</a>
+			</span>
+			<br>
 		</div>
+		
+		
 		<hr/>
 		<div data-ng-view></div>
+		
 	</div>
 </body>
 </html>
