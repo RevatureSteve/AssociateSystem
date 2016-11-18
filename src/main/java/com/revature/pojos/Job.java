@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+
 @Entity
 @Table(name="job")
 public class Job {
@@ -24,10 +27,12 @@ public class Job {
 	
 	@ManyToOne
 	@JoinColumn(name="client_id")
+	@Fetch(org.hibernate.annotations.FetchMode.JOIN)
 	private Client client;
 
 	@ManyToOne
 	@JoinColumn(name="account_id")
+	@Fetch(org.hibernate.annotations.FetchMode.JOIN)
 	private Account account;
 	
 	@Column(name="job_contract_length")

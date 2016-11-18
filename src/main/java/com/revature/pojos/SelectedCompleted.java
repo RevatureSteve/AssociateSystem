@@ -13,6 +13,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 @Table(name="selected_completed")
 public class SelectedCompleted {
@@ -32,6 +35,7 @@ public class SelectedCompleted {
 	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
+	@Fetch(FetchMode.JOIN)
 	private Client client;
 	
 	@Column(name = "sc_timestamp")
