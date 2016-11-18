@@ -1,13 +1,13 @@
 @CHARSET "UTF-8";
 
-#RefreshInterviewsButton
+#RefreshInterviewsButton, #RefreshSubmissionsButton
 {
 	float:right;
 	padding:0;
 	line-height:1em;
 }
 
-#SubmissionPanel
+.InfoPanel
 {
-	margin:1em;
+	margin:0.5em;
 }

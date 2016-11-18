@@ -33,7 +33,7 @@ public class TechQuestion {
 	@ManyToMany
 	@JoinColumn(name = "tech_topic_id")
 	private List<TechTopic> techTopics;
-
+	
 	public TechQuestion() {}
 
 	public TechQuestion(String techQuestionName, User user, List<TechTopic> techTopics) {

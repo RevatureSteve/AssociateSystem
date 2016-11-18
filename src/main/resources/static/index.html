@@ -13,11 +13,13 @@
 	<script defer src="resources/js/header.js"></script>
 	<script defer src="resources/js/interviews.js"></script>
 	<script defer src="resources/js/submission.js"></script>
+	<script defer src="resources/js/navbar.js"></script>
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<script defer src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
+	
 		<div data-ng-controller="HeaderPanel as header" class="Container">
 			<img id="RevatureLogo" class="Inline"
 				src="https://revature.com/imgs/logo.png"></img>
@@ -31,9 +33,18 @@
 				<label>Full Name: {{firstName + " " + lastName}}</label><br/>
 				<a href="http://www.google.com">Logout</a>
 			</span>
+			<br>
+			<span class="navigationBar" id="navigationBar">
+				<a href="#/" class="navSelected">Home</a>
+				<a href="#/question">Question Bank</a>
+			</span>
+			<br>
 		</div>
+		
+		
 		<hr/>
 		<div data-ng-view></div>
+		
 	</div>
 </body>
 </html>

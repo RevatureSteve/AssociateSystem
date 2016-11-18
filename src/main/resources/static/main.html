@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="resources/css/main.css">
 <!-- Placement; Only display if placement is available. -->
 <hr/>
-<div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
+<div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
 	<h2>Interviews</h2>
 	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
 	<table id="InterviewTable">
@@ -20,7 +20,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr data-ng-repeat="interview in getAllInterviews()">
+			<tr data-ng-repeat="interview in interviews">
 				<td><label>{{interview.interviewId}}</label></td>
 				<td><label>{{interview.interviewJobNumber}}</label></td>
 				<td><label>{{interview.job.account.accountName}}</label></td>
@@ -34,32 +34,31 @@
 			</tr>
 		</tbody>
 	</table>
-	
-	<h1>Jobs</h1>
-	<table id="dummyJobTable">
+</div>
+<hr/>
+<div data-ng-controller="SubmissionPanel" class="Container InfoPanel" id="SubmissionPanel">
+	<h2>Job Applications</h2>
+	<input type="button" id="RefreshSubmissionsButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
+	<table id="SubmissionTable">
 		<thead>
-			<tr style="font-weight: bold">
-				<td>Job ID</td>
-				<td>Account</td>
-				<td>Client</td>
-				<td>City</td>
-				<td>State</td>
-				<td>Date Created</td>
+			<tr>
+				<th><label>JA_ID</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Date Submitted</label></th>
 			</tr>
 		</thead>
-		<tbody data-ng-repeat="job in getAllJobs()">
-			<tr>
-				<td>{{job.jobId}}</td>
-				<td>{{job.account.accountName}}</td>
-				<td>{{job.client.clientName}}</td>
-				<td>{{job.jobCity}}</td>
-				<td>{{job.jobState}}</td>
-				<td>{{job.jobTimestamp}}</td>
+		<tbody>
+			<tr data-ng-repeat="submission in submissions">
+				<td><label>{{submission.JA_ID}}</label></td>
+				<td><label>{{submission.job.account.accountName}}</label></td>
+				<td><label>{{submission.job.client.clientName}}</label></td>
+				<td><label>{{submission.job.jobCity}}</label></td>
+				<td><label>{{submission.job.jobState}}</label></td>
+				<td><label>{{submission.timeSubmitted}}</label></td>
 			</tr>
 		</tbody>
 	</table>
-</div>
-<hr/>
-<div data-ng-controller="SubmissionPanel" class="Container"
-	id="SubmissionPanel">
 </div>
