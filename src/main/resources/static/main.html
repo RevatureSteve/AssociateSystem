@@ -5,12 +5,18 @@
 	<table id="PlacementTable">
 		<thead>
 			<tr>
-				<th><label></label></th>
+				<th><label>Placement_ID</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>Start Date</label></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr data-ng-repeat="placement in placements">
-				<td><label>{{}}</label></td>
+				<td><label>{{placement.placementID}}</label></td>
+				<td><label>{{placement.account}}</label></td>
+				<td><label>{{placement.client}}</label></td>
+				<td><label>Please discuss with your marketer.</label></td>
 			</tr>
 		</tbody>
 	</table>
