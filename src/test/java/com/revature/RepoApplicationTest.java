@@ -129,7 +129,7 @@ public class RepoApplicationTest {
 	
 	public void makeJob() {
 		List<User> users = new ArrayList<>();
-		job = new Job(client, account, 10,users);
+	//	job = new Job(client, account, 10,users);
 		jobRepo.save(job);
 		System.out.println("Job made");
 	}
@@ -145,13 +145,13 @@ public class RepoApplicationTest {
 	
 	public void makeInterview() {
 		
-		interview = new Interview("Jon", client, account, status, user, new Timestamp(22222), 1);
+	//	interview = new Interview("Jon", client, account, status, user, new Timestamp(22222), 1);
 		interviewRepo.save(interview);
 		System.out.println("Interview made");
 	}
 	
 	public void makeSelectedCompleted() {
-		selectedCompleted = new SelectedCompleted(22, client, new Timestamp(23432));
+	//	selectedCompleted = new SelectedCompleted(22, client, new Timestamp(23432));
 		selectedCompletedRepo.save(selectedCompleted);
 		System.out.println("Selected Completed Made");
 	}
