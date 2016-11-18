@@ -1,5 +1,20 @@
 <link rel="stylesheet" href="resources/css/main.css">
-<!-- Placement; Only display if placement is available. -->
+<div data-ng-controller="Placement" class="Container InfoPanel" id="PlacementPanel">
+	<h2>Job Placements</h2>
+	<input type="button" id="RefreshPlacementsButton" data-ng-click="refreshAll()" value="Refresh Placements"/>
+	<table id="PlacementTable">
+		<thead>
+			<tr>
+				<th><label></label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="placement in placements">
+				<td><label>{{}}</label></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 <hr/>
 <div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
 	<h2>Interviews</h2>
