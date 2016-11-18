@@ -23,9 +23,6 @@ public class TechController {
 	@Autowired
 	TechQuestionRepo techQuestionRepo;
 	
-	@Autowired
-	
-	
 	@GetMapping("/getQuestions")
 	@ResponseBody
 	public List<TechQuestion> getQuestions() {

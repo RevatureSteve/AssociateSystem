@@ -2,7 +2,7 @@ var app=angular.module("RAS");
 
 app.controller("PlacementPanel",function($scope,$rootScope,placementDataService){
 	$scope.refreshAll=function(){
-		submissionDataService.getAllPlacements(function(response){
+		placementDataService.getAllPlacements(function(response){
 			$scope.placements=response.data;
 			$rootScope.lazilyInitializeDataTable("PlacementTable");
 		},
