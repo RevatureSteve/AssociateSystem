@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-#RefreshInterviewsButton, #RefreshSubmissionsButton
+.RefreshButton
 {
 	float:right;
 	padding:0;

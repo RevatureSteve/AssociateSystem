@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="resources/css/main.css">
 <div data-ng-controller="PlacementPanel" class="Container InfoPanel" id="PlacementPanel">
 	<h2>Job Placements</h2>
-	<input type="button" id="RefreshPlacementsButton" data-ng-click="refreshAll()" value="Refresh Placements"/>
+	<input type="button" id="RefreshPlacementsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Placements"/>
 	<table id="PlacementTable">
 		<thead>
 			<tr>
@@ -18,7 +18,7 @@
 <hr/>
 <div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
 	<h2>Interviews</h2>
-	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
+	<input type="button" id="RefreshInterviewsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
 	<table id="InterviewTable">
 		<thead>
 			<tr>
@@ -53,7 +53,7 @@
 <hr/>
 <div data-ng-controller="SubmissionPanel" class="Container InfoPanel" id="SubmissionPanel">
 	<h2>Job Applications</h2>
-	<input type="button" id="RefreshSubmissionsButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
+	<input type="button" id="RefreshSubmissionsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
 	<table id="SubmissionTable">
 		<thead>
 			<tr>
