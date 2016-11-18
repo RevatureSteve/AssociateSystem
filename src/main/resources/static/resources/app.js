@@ -4,7 +4,7 @@ app.controller("MainController", function($scope, $rootScope, dataService){
 	$rootScope.lazilyInitializeDataTable=function(id){
 		setTimeout(function(){
 			$("#"+id).DataTable();
-		},1000);
+		},0);
 	}
 });
 
