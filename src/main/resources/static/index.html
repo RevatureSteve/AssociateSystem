@@ -11,10 +11,10 @@
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
 	<script defer src="resources/app.js"></script>
 	<script defer src="resources/header/header.js"></script>
-	<script defer src="resources/header/navbar.js"></script>
 	<script defer src="resources/landing/placement.js"></script>
 	<script defer src="resources/landing/interviews.js"></script>
 	<script defer src="resources/landing/submission.js"></script>
+	<script defer src="resources/questions/question.js"></script>
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<script defer src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 </head>
@@ -36,12 +36,12 @@
 			<br>
 			<span id="navigationBar">
 				<a href="#/" id="navHome">Home</a>
-				<a href="#/question">Question Bank</a>
+				<a href="#/question" id="navQuestion">Question Bank</a>
 			</span>
 			<br>
 		</div>
 		<hr/>
-		<div data-ng-view></div>
+		<div data-ng-view id="ngView"></div>
 	</div>
 </body>
 </html>

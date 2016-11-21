@@ -11,6 +11,10 @@ app.controller("PlacementPanel",function($scope,$rootScope,placementDataService)
 		});
 	};
 	$scope.refreshAll();
+
+	// Navbar highlighting
+	$(".navSelected").removeClass("navSelected");
+	$("#navHome").addClass("navSelected");
 });
 
 app.service("placementDataService",function($http){
