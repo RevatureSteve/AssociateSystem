@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -31,14 +34,17 @@ public class User {
 
 	@ManyToOne
 	@JoinColumn(name = "role_id")
+	@Fetch(FetchMode.JOIN)
 	private Role role;
 	
 	@ManyToOne
 	@JoinColumn(name = "track_id")
+	@Fetch(FetchMode.JOIN)
 	private TechTrack track;
 	
 	@ManyToMany
 	@JoinColumn(name = "job_id")
+	@Fetch(FetchMode.JOIN)
 	private List<Job> jobs;
 	
 	public User(){}

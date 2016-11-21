@@ -1,11 +1,10 @@
 var app=angular.module("RAS",["ngRoute", "ui.bootstrap"]);
 
 app.controller("MainController", function($scope, $rootScope, dataService){
-	$scope.bob = null;
-	$scope.goToMain = function() {
-		dataService.goToMain(function(response) {
-			$scope.bob = JSON.stringify(response);
-		});
+	$rootScope.lazilyInitializeDataTable=function(id){
+		setTimeout(function(){
+			$("#"+id).DataTable();
+		},0);
 	}
 });
 
@@ -16,11 +15,11 @@ app.config(function($routeProvider) {
     })
     .when("/main", {
         templateUrl : "main.html"
+    })
+    .when("/question", {
+        templateUrl : "question.html"
     });
 });
 
 app.service("dataService", function($http, $rootScope) {
-	this.goToMain = function(callback) {
-		$http.get('home').then(callback);
-	}
-})
+});

@@ -1,7 +1,11 @@
 package com.revature.dto;
 
-public class AuthenticationDTO {
+import java.io.Serializable;
 
+public class AuthenticationDTO implements Serializable {
+
+	private static final long serialVersionUID = -8247161533905914779L;
+	
 	private String username;
 	private String password;
 	

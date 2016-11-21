@@ -1,20 +1,85 @@
-<link rel="stylesheet" href="resources/css/main.css">
-<!-- Placement; Only display if placement is available. -->
-<hr/>
-<div data-ng-controller="InterviewsPanel" class="Container" id="InterviewsPanel">
-	<input type="button" id="RefreshInterviewsButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
-	<div class="InterviewBlock" data-ng-repeat="interview in getAllInterviews()">
-		<h3 class="ClientName">{{interview.client}}</h3>
-		<label class="InterviewInfo">{{interview.info}}</label>
-		<span class="InterviewInfoSpacer"><label>...</label></span>
-		<label class="InterviewLateInfo">{{interview.info}}</label>
-	</div>
+<link rel="stylesheet" href="resources/landing/landing.css">
+<div data-ng-controller="PlacementPanel" class="Container InfoPanel" id="PlacementPanel">
+	<h2>Job Placements</h2>
+	<input type="button" id="RefreshPlacementsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Placements"/>
+	<table id="PlacementTable">
+		<thead>
+			<tr>
+				<th><label>Placement_ID</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>Start Date</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="placement in placements">
+				<td><label>{{placement.placementID}}</label></td>
+				<td><label>{{placement.account}}</label></td>
+				<td><label>{{placement.client}}</label></td>
+				<td><label>Please discuss with your marketer.</label></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <hr/>
-<div data-ng-controller="SubmissionPanel" class="Container"
-	id="SubmissionPanel">
-
-	First Name: <input type="text" ng-model="firstName"><br>
-	Last Name: <input type="text" ng-model="lastName"><br> <br>
-	Full Name: {{firstName + " " + lastName}}
+<div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
+	<h2>Interviews</h2>
+	<input type="button" id="RefreshInterviewsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
+	<table id="InterviewTable">
+		<thead>
+			<tr>
+				<th><label>Interview ID</label></th>
+				<th><label>Job Number</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>Job Title</label></th>
+				<th><label>Interview Time</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Interview Type</label></th>
+				<th><label>Overall Feedback</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="interview in interviews">
+				<td><label>{{interview.interviewId}}</label></td>
+				<td><label>{{interview.interviewJobNumber}}</label></td>
+				<td><label>{{interview.job.account.accountName}}</label></td>
+				<td><label>{{interview.job.client.clientName}}</label></td>
+				<td><label>{{interview.job.jobTitle}}</label></td>
+				<td><label>{{interview.interviewTime}}</label></td>
+				<td><label>{{interview.job.jobCity}}</label></td>
+				<td><label>{{interview.job.jobState}}</label></td>
+				<td><label>{{interview.interviewType}}</label></td>
+				<td><label>{{interview.interviewFeedback}}</label></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<hr/>
+<div data-ng-controller="SubmissionPanel" class="Container InfoPanel" id="SubmissionPanel">
+	<h2>Job Applications</h2>
+	<input type="button" id="RefreshSubmissionsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
+	<table id="SubmissionTable">
+		<thead>
+			<tr>
+				<th><label>JA_ID</label></th>
+				<th><label>Account</label></th>
+				<th><label>Client</label></th>
+				<th><label>City</label></th>
+				<th><label>State</label></th>
+				<th><label>Date Submitted</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="submission in submissions">
+				<td><label>{{submission.JA_ID}}</label></td>
+				<td><label>{{submission.job.account.accountName}}</label></td>
+				<td><label>{{submission.job.client.clientName}}</label></td>
+				<td><label>{{submission.job.jobCity}}</label></td>
+				<td><label>{{submission.job.jobState}}</label></td>
+				<td><label>{{submission.timeSubmitted}}</label></td>
+			</tr>
+		</tbody>
+	</table>
 </div>

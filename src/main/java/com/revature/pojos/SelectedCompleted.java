@@ -13,6 +13,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 @Table(name="selected_completed")
 public class SelectedCompleted {
@@ -24,10 +27,15 @@ public class SelectedCompleted {
 	private int selectedCompletedId;
 
 	@Column(name = "sc_time")
-	private double selectedCompletedTime;
+	private double selectedCompletedTimeToStartDate;
 
 	@ManyToOne
+	@JoinColumn(name = "account_id")
+	private Account account;
+	
+	@ManyToOne
 	@JoinColumn(name = "client_id")
+	@Fetch(FetchMode.JOIN)
 	private Client client;
 	
 	@Column(name = "sc_timestamp")
@@ -35,10 +43,11 @@ public class SelectedCompleted {
 	
 	public SelectedCompleted(){}
 
-	public SelectedCompleted(double selectedCompletedTimeToStartDate, Client client,
+	public SelectedCompleted(double selectedCompletedTimeToStartDate, Account account, Client client,
 			Timestamp selectedCompletedTimestamp) {
 		super();
-		this.selectedCompletedTime = selectedCompletedTimeToStartDate;
+		this.selectedCompletedTimeToStartDate = selectedCompletedTimeToStartDate;
+		this.account = account;
 		this.client = client;
 		this.selectedCompletedTimestamp = selectedCompletedTimestamp;
 	}
@@ -52,11 +61,19 @@ public class SelectedCompleted {
 	}
 
 	public double getSelectedCompletedTimeToStartDate() {
-		return selectedCompletedTime;
+		return selectedCompletedTimeToStartDate;
 	}
 
 	public void setSelectedCompletedTimeToStartDate(double selectedCompletedTimeToStartDate) {
-		this.selectedCompletedTime = selectedCompletedTimeToStartDate;
+		this.selectedCompletedTimeToStartDate = selectedCompletedTimeToStartDate;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public Client getClient() {
@@ -77,9 +94,9 @@ public class SelectedCompleted {
 
 	@Override
 	public String toString() {
-		return "SelectedCompleted [selectedCompletedId=" + selectedCompletedId + ", selectedCompletedTime="
-				+ selectedCompletedTime + ", client=" + client + "]";
+		return "SelectedCompleted [selectedCompletedId=" + selectedCompletedId + ", selectedCompletedTimeToStartDate="
+				+ selectedCompletedTimeToStartDate + ", account=" + account + ", client=" + client
+				+ ", selectedCompletedTimestamp=" + selectedCompletedTimestamp + "]";
 	}
-
 
 }
