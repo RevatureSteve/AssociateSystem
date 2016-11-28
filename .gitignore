@@ -1,6 +1,8 @@
 target/
 .mvn/*
 Servers/*
+mvnw
+mvnw.cmd
 
 ### STS ###
 .apt_generated
