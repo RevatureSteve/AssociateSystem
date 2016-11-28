@@ -11,10 +11,10 @@ app.controller("MainController", function($scope, $rootScope, dataService){
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "main.html"
+        templateUrl : "home.html"
     })
     .when("/main", {
-        templateUrl : "main.html"
+        templateUrl : "home.html"
     })
     .when("/question", {
         templateUrl : "question.html"
