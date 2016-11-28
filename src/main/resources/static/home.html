@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="resources/home/home.css">
-<div data-ng-controller="PlacementPanel" class="Container InfoPanel" id="PlacementPanel">
-	<div class="container">
+<div data-ng-controller="HomePanel">
+	<div class="Container InfoPanel" id="PlacementPanel">
 		<h2>Job Placements</h2>
-		<input type="button" id="RefreshPlacementsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Placements"/>
+		<input type="button" id="RefreshPlacementsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh All"/>
 		<table id="PlacementTable">
 			<thead>
 				<tr>
@@ -22,12 +22,9 @@
 			</tbody>
 		</table>
 	</div>
-</div>
-<hr/>
-<div data-ng-controller="InterviewsPanel" class="Container InfoPanel" id="InterviewsPanel">
-	<div class="container">
+	<hr/>
+	<div class="Container InfoPanel" id="InterviewsPanel">
 		<h2>Interviews</h2>
-		<input type="button" id="RefreshInterviewsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Interviews"/>
 		<table id="InterviewTable">
 			<thead>
 				<tr>
@@ -59,12 +56,9 @@
 			</tbody>
 		</table>
 	</div>
-</div>
-<hr/>
-<div data-ng-controller="SubmissionPanel" class="Container InfoPanel" id="SubmissionPanel">
-	<div class="container">
+	<hr/>
+	<div class="Container InfoPanel" id="SubmissionPanel">
 		<h2>Job Applications</h2>
-		<input type="button" id="RefreshSubmissionsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh Applications"/>
 		<table id="SubmissionTable">
 			<thead>
 				<tr>
