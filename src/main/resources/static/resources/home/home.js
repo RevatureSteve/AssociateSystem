@@ -28,10 +28,7 @@ app.controller("HomePanel",function($scope,$rootScope,homeDataService){
 		);
 	};
 	$scope.refreshAll();
-
-	// Navbar highlighting
-	$(".navSelected").removeClass("navSelected");
-	$("#navHome").addClass("navSelected");
+	$rootScope.updateNavbarSelection("Home");
 });
 
 app.service("homeDataService",function($http){
