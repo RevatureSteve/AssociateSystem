@@ -21,5 +21,13 @@ public interface BusinessDelegate {
 	public ResponseEntity<User> authenticate(AuthenticationDTO auth);
 	
 	public List<TechQuestion> getQuestions();
+	
+	/**
+	 * <h1>Get all Questions By Track</h1>
+	 * 
+	 * @param String
+	 * @return A List of TechQuestion
+	 * @author Steve Kelsey
+	 */
 	public List<TechQuestion> getQuestionsByTrack(@RequestParam("catName") String catName);
 }
