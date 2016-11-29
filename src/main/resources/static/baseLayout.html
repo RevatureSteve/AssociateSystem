@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Revature Associate System</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/style.css">
+	<link rel="stylesheet" href="style.css">
 	<script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
-	<script defer src="resources/app.js"></script>
-	<script defer src="resources/header/header.js"></script>
+	<script defer src="app.js"></script>
+	<script defer src="header/header.js"></script>
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<script defer src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 	<!-- ROUTE-SPECIFIC SCRIPTS -->
-	<script defer src="resources/home/home.js"></script>
-	<script defer src="resources/questions/question.js"></script>
+	<script defer src="dashboard/dashboard.js"></script>
+	<script defer src="questions/question.js"></script>
 </head>
 <body data-ng-app="RAS">
 	<div data-ng-controller="MainController as main">
@@ -30,7 +30,7 @@
 				<input class="UserTextBox" type="text" data-ng-model="firstName" size=12 placeholder="First Name:"><br/>
 				<input class="UserTextBox" type="text" data-ng-model="lastName" size=12 placeholder="Last Name:"><br/>
 				<label>Full Name: {{firstName + " " + lastName}}</label><br/>
-				<a href="http://www.google.com">Logout</a>
+				<a href="http://www.google.com">Logout</a> <!-- TODO: Integrate with login feature. -->
 			</span>
 			<br>
 			<span id="navigationBar">

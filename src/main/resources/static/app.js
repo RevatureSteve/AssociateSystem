@@ -11,13 +11,13 @@ app.controller("MainController", function($scope, $rootScope, dataService){
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "home.html"
+        templateUrl : "dashboard/dashboard.html"
     })
     .when("/main", {
-        templateUrl : "home.html"
+        templateUrl : "dashboard/dashboard.html"
     })
     .when("/question", {
-        templateUrl : "question.html"
+        templateUrl : "questions/questions.html"
     });
 });
 
