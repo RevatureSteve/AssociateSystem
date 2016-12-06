@@ -156,7 +156,7 @@ public class RepoApplicationTest {
 		System.out.println("Selected Completed Made");
 	}
 	
-	/*@Test
+	@Test
 	public void testCreateRepos() {
 		makeClient();
 		makeAccountRepo();
@@ -166,7 +166,7 @@ public class RepoApplicationTest {
 		makeJob();
 		makeUser();
 		makeInterview();
-	}*/
+	}
 	
 	@Test
 	public void getAccount() {
