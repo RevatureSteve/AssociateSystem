@@ -163,26 +163,26 @@ public class RepoApplicationTest {
 		makeStatus();
 		makeRole();
 		makeTechTrack();
-		makeJob();
+		//makeJob();
 		makeUser();
 		makeInterview();
 	}
 	
-	@Test
-	public void getAccount() {
-		Account accountResult = accountRepo.findByAccountName("Apex Group");
-		System.out.println(accountResult.toString());
-	}
+//	@Test
+//	public void getAccount() {
+//		Account accountResult = accountRepo.findByAccountName("Apex Group");
+//		System.out.println(accountResult.toString());
+//	}
 	
-	@Test
-	public void getInterview() {
-		User userResult = userRepo.findOneByUserId(100);
-		System.out.println(userResult.toString());
-		List<Interview> interviewResults = interviewRepo.findByUser(userResult);
-		
-		interviewResults.forEach(i -> System.out.println(i.toString()));
-		
-	}
+//	@Test
+//	public void getInterview() {
+//		User userResult = userRepo.findOneByUserId(100);
+//		System.out.println(userResult.toString());
+//		List<Interview> interviewResults = interviewRepo.findByUser(userResult);
+//		
+//		interviewResults.forEach(i -> System.out.println(i.toString()));
+//		
+//	}
 	
 	@Test
 	public void getJob() {
@@ -191,15 +191,15 @@ public class RepoApplicationTest {
 		jobs.forEach(j -> System.out.println(j.toString()));
 	}
 	
-	@Test
-	public void getFeedback() {
-	//	makeUserFeedBack();
-		User userResult = userRepo.findOneByUserId(100);
-		System.out.println(userResult.toString());
-		List<Interview> interviewResults = interviewRepo.findByUser(userResult);
-		System.out.println(userFeedbackRepo.findByInterview(interviewResults.get(0)));
-		
-	}
+//	@Test
+//	public void getFeedback() {
+//	//	makeUserFeedBack();
+//		User userResult = userRepo.findOneByUserId(100);
+//		System.out.println(userResult.toString());
+//		List<Interview> interviewResults = interviewRepo.findByUser(userResult);
+//		System.out.println(userFeedbackRepo.findByInterview(interviewResults.get(0)));
+//		
+//	}
 	
 	
 	@Test
