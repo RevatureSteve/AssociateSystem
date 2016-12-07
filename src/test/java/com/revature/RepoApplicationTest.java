@@ -165,7 +165,7 @@ public class RepoApplicationTest {
 		makeTechTrack();
 		//makeJob();
 		makeUser();
-		makeInterview();
+		//makeInterview();
 	}
 	
 //	@Test
