@@ -1,6 +1,6 @@
 var app=angular.module("RAS");
 
-app.controller("HomePanel",function($scope,$rootScope,homeDataService){
+app.controller("HomePanel",function($scope,$rootScope,homeDataService,testDataService){
 	$scope.refreshAll=function(){
 		homeDataService.getAllPlacements(function(response){
 				$scope.placements=response.data;
@@ -29,6 +29,12 @@ app.controller("HomePanel",function($scope,$rootScope,homeDataService){
 	};
 	$scope.refreshAll();
 	$rootScope.updateNavbarSelection("Home");
+	$scope.launchExperiment=function(){
+		var Box=$("#ExperimentBox")[0];
+		testDataService.compareQuestion(Box.value,function(response){
+			Box.value=response.data.Question;
+		});
+	};
 });
 
 app.service("homeDataService",function($http){
@@ -40,5 +46,19 @@ app.service("homeDataService",function($http){
 	};
 	this.getAllSubmissions=function(callback,fallback){
 		$http.get('submissions').then(callback,fallback);
+	};
+});
+
+app.service("testDataService",function($http){
+	this.compareQuestion=function(question,callback,fallback){
+		$http({
+			method:"POST",
+			url:"/compareQuestion",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			data:{Question:question}
+		})
+		.then(callback,fallback);
 	};
 });

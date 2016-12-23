@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="dashboard/dashboard.css">
 <div data-ng-controller="HomePanel">
+	<input type="text" placeholder="Experimental" id="ExperimentBox" value="How does one go so far as to even?" size=100/>
+	<input type="button" value="Science!" data-ng-click="launchExperiment()"/>
+	<br/>
 	<div class="Container InfoPanel" id="PlacementPanel">
 		<h2>Job Placements</h2>
 		<input type="button" id="RefreshPlacementsButton" class="RefreshButton" data-ng-click="refreshAll()" value="Refresh All"/>
